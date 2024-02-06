@@ -59,24 +59,24 @@ reArrange.addEventListener('click', () => {
 
 
 
- btn.addEventListener('click', (event) => {
+ btn.addEventListener('click', async (event) => {
     event.preventDefault()
     const userInputValue = inputElement.value
     if(userInputValue == ""){
         alert('Please Enter the value')
     }
     else{
-    container.classList.add('res-container')
+        container.classList.add('res-container')
+        const fromElem = fromSelect.firstElementChild.value
+        const toElem = toSelect.firstElementChild.value
+        const fetchDetails = await fetch(`https://${HOST}/latest?amount=${userInputValue}&from=${fromElem}&to=${toElem}`)
+        const response = await fetchDetails.json()
 
-        fetch(`https://${HOST}/latest?amount=${userInputValue}&from=${fromElement.value}&to=${toElement.value}`)
-        .then(resp => resp.json())
-        .then((data) => {
-            const resultValue = data.rates[`${toElement.value}`]
+            const resultValue = response.rates[`${toElem}`]
             RESULT.classList.add("animate")
             RESULT.innerHTML = `<span>
-                        ${userInputValue} ${fromElement.value} = <span class="green">${resultValue}</span> ${toElement.value}
+                        ${userInputValue} ${fromSelect.firstElementChild.value} = <span class="green">${resultValue}</span> ${toSelect.firstElementChild.value}
             </span>`
-        });
     }
 
         // console.log(fromElement.querySelectorAll('option')[fromElement.selectedIndex].textContent);  <--- this is another way to get select element value but this is old way and very long 

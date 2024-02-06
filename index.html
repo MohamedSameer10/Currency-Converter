@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Real Time Currency Coverter | SamProg</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <form class="currency-container">
+            <h1>Currency Converter</h1>
+            <div class="amount inputs">
+                <label for="amount">
+                    Amount
+                </label>
+                <input type="text" id="amount" class="boxes" required>
+            </div>
+    
+            <div class="converter">
+                <div class="from inputs">
+                    <label for="from">From</label>
+                    <div class="select input">
+                        <div class="from-select">
+                            <select id="from"></select>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="convert-icon">
+                    <i class='bx bx-transfer-alt' id="rearrage"></i>
+                </div>
+    
+                <div class="to inputs">
+                    <label for="to">To</label>
+                    <div class="select input">
+                        <div class="to-select">
+                            <select id="to"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="result"></div>
+    
+            <button id="button">Get Exchange Rate</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

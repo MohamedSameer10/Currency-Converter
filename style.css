@@ -50,7 +50,7 @@ body{
 
 .currency-container{
     width: 450px;
-    height: 490px;
+    height: 500px;
     background-color: rgba(0, 0, 0, 0.331);
     backdrop-filter: blur(50px);
     border-radius: 0.6rem;

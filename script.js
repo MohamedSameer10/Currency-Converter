@@ -66,7 +66,7 @@ reArrange.addEventListener('click', () => {
         alert('Please Enter the value')
     }
     else{
-    container.style.height = "550px"
+    container.classList.add('res-container')
 
         fetch(`https://${HOST}/latest?amount=${userInputValue}&from=${fromElement.value}&to=${toElement.value}`)
         .then(resp => resp.json())

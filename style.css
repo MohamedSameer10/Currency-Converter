@@ -80,7 +80,7 @@ body {
 .currency-container input,
 .currency-container .select {
     background-color: transparent;
-    border: 2px solid rgba(128, 128, 128, 0.313);
+    border: 2px solid rgba(128, 128, 128, 0.644);
     padding: 0.4rem 0.8rem;
     font-size: 1.18rem;
     color: white;

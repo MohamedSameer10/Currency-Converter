@@ -259,7 +259,9 @@ body {
 
 @media screen and (max-width:378px) {
 
-    .currency-container{
+    .currency-container,
+    .container::before,
+    .container::after{
         width: 250px;
     }
 

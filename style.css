@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins',sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
-body{
+body {
     height: 100vh;
     background-color: #221f2f;
 }
 
 
-.container{
+.container {
     width: 100%;
     height: 100%;
     display: flex;
@@ -23,7 +23,7 @@ body{
 }
 
 
-.container::before{
+.container::before {
     content: "";
     width: 300px;
     height: 300px;
@@ -33,10 +33,10 @@ body{
     position: absolute;
     top: 6%;
     left: 10%;
-    z-index: -10;
+    z-index: -100;
 }
 
-.container::after{
+.container::after {
     content: "";
     width: 300px;
     height: 300px;
@@ -46,9 +46,10 @@ body{
     position: absolute;
     right: 10%;
     bottom: 10%;
+    z-index: -100;
 }
 
-.currency-container{
+.currency-container {
     width: 450px;
     height: 500px;
     background-color: rgba(0, 0, 0, 0.331);
@@ -59,25 +60,25 @@ body{
     transition: all 0.5s;
 }
 
-.currency-container h1{
+.currency-container h1 {
     font-weight: 500;
     text-align: center;
     margin-bottom: 1rem;
 }
 
-.currency-container .inputs{
+.currency-container .inputs {
     display: flex;
     flex-direction: column;
     margin: 0.4rem 0 0.7rem;
 }
 
-.currency-container label{
+.currency-container label {
     font-size: 1.1rem;
     margin-bottom: 0.3rem;
 }
 
 .currency-container input,
-.currency-container .select{
+.currency-container .select {
     background-color: transparent;
     border: 2px solid rgba(128, 128, 128, 0.313);
     padding: 0.4rem 0.8rem;
@@ -90,23 +91,23 @@ body{
 
 .currency-container input:focus,
 .currency-container input:hover,
-.currency-container .converter .select:hover{
+.currency-container .converter .select:hover {
     border: 2px solid #42318d;
 }
 
 
-.currency-container .convert-icon{
+.currency-container .convert-icon {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 
-.currency-container .convert-icon{
+.currency-container .convert-icon {
     margin: 1.5rem 0 0 0;
 }
 
-.currency-container .convert-icon i{
+.currency-container .convert-icon i {
     color: white;
     font-size: 3rem;
     rotate: 90deg;
@@ -114,11 +115,11 @@ body{
     transition: all 0.3s;
 }
 
-.currency-container .convert-icon i:hover{
+.currency-container .convert-icon i:hover {
     color: #876cff;
 }
 
-.currency-container .converter .select select{
+.currency-container .converter .select select {
     width: 100%;
     cursor: pointer;
     border: none;
@@ -129,28 +130,28 @@ body{
     padding: 0.2rem 0;
 }
 
-.currency-container .converter .select select option{
+.currency-container .converter .select select option {
     color: white;
     background-color: #151122;
 }
 
-.currency-container .converter .select select::-webkit-scrollbar{
+.currency-container .converter .select select::-webkit-scrollbar {
     background-color: black;
-    width:4px;
+    width: 4px;
 }
 
-.currency-container .converter .select select::-webkit-scrollbar-thumb{
+.currency-container .converter .select select::-webkit-scrollbar-thumb {
     background-color: rgb(81, 81, 81);
     border-radius: 1rem;
 }
 
-.currency-container .result{
+.currency-container .result {
     text-align: center;
     margin: 2rem 0;
     font-size: 1.3rem;
 }
 
-.currency-container button{
+.currency-container button {
     width: 100%;
     font-size: 1.15rem;
     padding: 0.65rem 0;
@@ -162,45 +163,85 @@ body{
     transition: all 0.3s;
 }
 
-.currency-container button:hover{
+.currency-container button:hover {
     background-color: #5947ac;
 }
 
-.currency-container .green{
+.currency-container .green {
     color: rgb(6, 252, 76);
     font-weight: 600;
 }
-.currency-container .animate{
+
+.currency-container .animate {
     opacity: 0;
     scale: 0;
     animation: animate 0.5s linear forwards 0.8s;
 }
 
-.res-container{
+.res-container {
     height: 560px;
 }
 
 @keyframes animate {
-    to{
+    to {
         scale: 1;
         opacity: 1;
     }
 }
 
-@media screen  and (max-width:460px){
-    body{
-        padding: 0 2rem;
-    }
-}
-
-@media screen and (max-width : 400px){
+@media screen and (max-width:600px) {
 
     .currency-container{
-        height: 550px;
+        width: 320px;
+        height: 430px;
+    }
+
+    .currency-container h1{
+        font-size: 1.5rem;
+    }
+
+    .currency-container label{
+        font-size: 1rem;
+    }
+
+    .currency-container input{
+        padding: 0.3rem 1rem;
+    }
+
+    .currency-container .select{
+        padding: 0.2rem 0.8rem;
+    }
+
+    .currency-container .convert-icon i{
+        font-size: 2.2rem;
+    }
+
+    .currency-container .convert-icon{
+        margin: 0;
     }
 
     .res-container{
-        height: 590px;
+        height: 465px;
     }
+
+    .currency-container .result{
+        font-size: 1.2rem;
+        margin: 1.2rem;
+    }
+
 }
 
+@media screen and (max-width:348px) {
+
+    .currency-container{
+        width: 250px;
+    }
+
+    .currency-container h1{
+        font-size: 1.21rem;
+    }
+
+    .currency-container .result{
+        font-size: 1rem;
+    }
+}

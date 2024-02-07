@@ -31,9 +31,10 @@ body {
     filter: blur(80px);
     border-radius: 50%;
     position: absolute;
-    top: 6%;
-    left: 10%;
+    top: 0%;
+    left: 0%;
     z-index: -100;
+    animation: topanim 1s linear forwards;
 }
 
 .container::after {
@@ -44,9 +45,10 @@ body {
     filter: blur(80px);
     border-radius: 50%;
     position: absolute;
-    right: 10%;
-    bottom: 10%;
+    right: 0%;
+    bottom: 0%;
     z-index: -100;
+    animation: bottomanim 1s linear forwards;
 }
 
 .currency-container {
@@ -58,6 +60,30 @@ body {
     padding: 1rem 1.5rem;
     color: rgb(224, 223, 223);
     transition: all 0.5s;
+    opacity: 0;
+    scale: 0;
+    animation: animate 1s linear forwards;
+}
+
+@keyframes animate {
+    to{
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+@keyframes topanim {
+    to{
+        top: 10%;
+        left: 20%;
+    }
+} 
+
+@keyframes bottomanim {
+    to{
+        bottom: 10%;
+        right: 20%;
+    }
 }
 
 .currency-container h1 {
